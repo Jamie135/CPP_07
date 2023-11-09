@@ -17,7 +17,7 @@ int main(void)
 	std::cout << "max( c, d ) = " << ::max(c, d) << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "------- My Test -------\n" << std::endl;
+	std::cout << "------- My Test -------" << std::endl;
 	std::cout << "\nTest 1 : min test" << std::endl;
 	std::cout << "char [c, A] : " << min<char>('c', 'A') << std::endl; 
 	std::cout << "int [-17, 42] : " << min<int>(-17, 42) << std::endl; 
