@@ -2,7 +2,9 @@
 
 # include <iostream>
 # include <cstring>
+# include <cstdlib>
 # include <stdexcept>
+# include <ctime>
 
 template <typename T>
 class Array
@@ -32,7 +34,8 @@ public:
 	Array& operator=(const Array &obj)
 	{
 		if (this != &obj) {
-			delete[] _array;
+			if (_array)
+				delete[] _array;
 			_size = obj._size;
 			_array = new T[_size];
 			for (unsigned int i = 0; i < _size; ++i) {
@@ -44,7 +47,8 @@ public:
 
 	~Array()
 	{
-		delete[] _array;
+		if (_size >= 0)
+			delete[] _array;
 	}
 
 	T &operator [] (int i)
