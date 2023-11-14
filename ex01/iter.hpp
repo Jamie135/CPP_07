@@ -5,8 +5,8 @@
 # define GREEN	"\033[32m"
 # define END	"\033[0m"
 
-template <typename T>
-void	iter(T *addr, size_t size, void (*ft)(T &))
+template <typename T, typename S>
+void	iter(T *addr, size_t size, S (*ft))
 {
 	if (!addr || !ft)
 		return ;
