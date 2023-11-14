@@ -15,6 +15,15 @@ void	iter(T *addr, size_t size, S (*ft))
 }
 
 template <typename T>
+void	iter(T *addr, size_t size, void (*ft) (T const & x))
+{
+	if (!addr || !ft)
+		return ;
+	for (size_t i = 0; i < size; i++)
+		ft(addr[i]);
+}
+
+template <typename T>
 void ft_dec(T &e)
 {
 	e--;
